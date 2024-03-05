@@ -1,6 +1,21 @@
 # **LCD_font_samples**
 Sample files for Python class inheritance used LCD_font.
 
+## About Class Inheritance
+  If you write "pass" in the function's content...
+  ```
+  # in lcdfontdraw.py
+  class LcdFontDraw():
+      def draw_dot(self, org1, org2, color):
+          pass
+  ```
+  The contents can be set for each file import destination.
+  ```
+  # in lcdclock_MC.py
+  class LcdFontDrawMC(LcdFontDraw):
+    def draw_dot(self, org1, org2, color):
+        mc.setBlock(org2[0], org2[1], org2[2], color)
+  ```
 
 ## Files OverView
 + #### lcdfont
@@ -23,19 +38,3 @@ Sample files for Python class inheritance used LCD_font.
 
 + #### LCD_clocks
   Code to output a digital clocks to the Pygame and Minecraft worlds simultaneously using lcdfontdraw.
-
-
-## About Class Inheritance
-  If you write "pass" in the function's content...
-  ```
-  # in lcdfontdraw.py
-  def draw_dot(self, org1, org2, color):
-      pass
-  ```
-  a
-  ```
-  # in lcdclock_MC.py
-  class LcdFontDrawMC(LcdFontDraw):
-    def draw_dot(self, org1, org2, color):
-        mc.setBlock(org2[0], org2[1], org2[2], color)
-  ```
