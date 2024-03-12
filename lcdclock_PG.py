@@ -2,8 +2,6 @@ import pygame
 import pygame.freetype
 from pygame.locals import Rect
 from lcdfontdraw import LcdFontDraw
-import param_MCJE as param
-from mcje.minecraft import Minecraft
 from datetime import datetime
 
 DARK_GRAY = (40, 40, 40)
@@ -13,16 +11,19 @@ GREEN = (10, 250, 10)
 CYAN = (120, 120, 250)
 YELLOW = (250, 250, 20)
 WHITE = (250, 250, 250)
+BLACK = (0, 0, 0)
 
-WINDOW_WIDTH = 640
-WINDOW_HEIGHT = 240
+WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 200
+
+FONT_COLOR = GREEN
+BACK_COLOR = GRAY
 
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("LCD font")
 clock = pygame.time.Clock()
 font1 = pygame.freetype.Font("fonts/natumemozi.ttf", 48)
-mc = Minecraft.create(port=param.PORT_MC)
 
 
 class LcdFontDrawPG(LcdFontDraw):
@@ -31,14 +32,14 @@ class LcdFontDrawPG(LcdFontDraw):
 
 
 lcd = LcdFontDrawPG(screen)
-lcd.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=GREEN, COLOR_OFF=GRAY)
+lcd.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=FONT_COLOR, COLOR_OFF=BACK_COLOR)
 lcd.init_row(X_ORG=8, Y_ORG=8, Z_ORG=0, COL_INTV=6)
 
 
 running = True
 while running:
     dt_now = datetime.now()
-    screen.fill(GRAY)
+    screen.fill(BACK_COLOR)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False

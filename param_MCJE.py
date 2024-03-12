@@ -26,6 +26,7 @@ STONE = "stone"
 GRASS_BLOCK = "grass_block"
 GOLD_BLOCK = "gold_block"
 IRON_BLOCK = "iron_block"
+EMERALD_BLOCK = "emerald_block"
 GLOWSTONE = "glowstone"
 SEA_LANTERN_BLOCK = "sea_lantern"
 

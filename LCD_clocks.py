@@ -13,18 +13,20 @@ GREEN = (10, 250, 10)
 CYAN = (120, 120, 250)
 YELLOW = (250, 250, 20)
 WHITE = (250, 250, 250)
+BLACK = (0, 0, 0)
 
 WINDOW_WIDTH = 500
 WINDOW_HEIGHT = 200
 
+FONT_COLOR = GREEN
+BACK_COLOR = GRAY
+BLOCK_COLOR = param.EMERALD_BLOCK
+
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("LCD font")
-
 clock = pygame.time.Clock()
-
 font1 = pygame.freetype.Font("fonts/natumemozi.ttf", 48)
-
 mc = Minecraft.create(port=param.PORT_MC)
 
 
@@ -34,7 +36,7 @@ class LcdFontDrawPG(LcdFontDraw):
 
 
 lcd1 = LcdFontDrawPG(screen)
-lcd1.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=GREEN, COLOR_OFF=GRAY)
+lcd1.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=FONT_COLOR, COLOR_OFF=BACK_COLOR)
 lcd1.init_row(X_ORG=8, Y_ORG=8, Z_ORG=0, COL_INTV=6)
 
 
@@ -44,13 +46,13 @@ class LcdFontDrawMC(LcdFontDraw):
 
 
 lcd2 = LcdFontDrawMC(mc)
-lcd2.init_col(BLOCK_SIZE=1, BLOCK_INTV=1, COLOR_ON=param.DIAMOND_BLOCK, COLOR_OFF=param.AIR)
+lcd2.init_col(BLOCK_SIZE=1, BLOCK_INTV=1, COLOR_ON=BLOCK_COLOR, COLOR_OFF=param.AIR)
 lcd2.init_row(X_ORG=0, Y_ORG=100, Z_ORG=0, COL_INTV=6)
 
 running = True
 while running:
     dt_now = datetime.now()
-    screen.fill(GRAY)
+    screen.fill(BACK_COLOR)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
