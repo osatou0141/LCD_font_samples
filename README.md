@@ -1,5 +1,5 @@
 # **Class Inheritance by LCD_font_samples**
-Sample files for Python class inheritance used LCD_font.
+Sample files for Python class inheritance using LCD_font.
 
 ## About Class Inheritance
   If you write "pass" in the function's content...
