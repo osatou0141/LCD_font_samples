@@ -5,8 +5,9 @@ import param_MCJE as param
 from mcje.minecraft import Minecraft
 from datetime import datetime
 
-pygame.init()
+BLOCK_COLOR = param.EMERALD_BLOCK
 
+pygame.init()
 mc = Minecraft.create(port=param.PORT_MC)
 
 
@@ -16,7 +17,7 @@ class LcdFontDrawMC(LcdFontDraw):
 
 
 lcd = LcdFontDrawMC(mc)
-lcd.init_col(BLOCK_SIZE=1, BLOCK_INTV=1, COLOR_ON=param.DIAMOND_BLOCK, COLOR_OFF=param.AIR)
+lcd.init_col(BLOCK_SIZE=1, BLOCK_INTV=1, COLOR_ON=BLOCK_COLOR, COLOR_OFF=param.AIR)
 lcd.init_row(X_ORG=0, Y_ORG=100, Z_ORG=0, COL_INTV=6)
 
 running = True
