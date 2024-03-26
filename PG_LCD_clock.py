@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import Rect
 from datetime import datetime
 
-with open("fonts/LCDfont_5x7.txt", encoding="utf-8") as f:
+with open("LCDfont_5x7.txt", encoding="utf-8") as f:
     LCD_font_styles = f.read().split('\n')
 
 DARK_GRAY = (40, 40, 40)
@@ -49,7 +49,7 @@ class LCD_font():
 
 
     def draw_dot(self, org1, org2, color):
-        pass
+        pygame.draw.rect(self.screen, color, Rect(org1[0], org1[1], self.BLOCK_SIZE, self.BLOCK_SIZE))
 
 
 if __name__ == "__main__":
@@ -63,12 +63,8 @@ if __name__ == "__main__":
     pygame.display.set_caption("LCD font")
     clock = pygame.time.Clock()
 
-    class LCD_font_MC(LCD_font):
-        def draw_dot(self, org1, org2, color):
-            pygame.draw.rect(self.screen, color, Rect(org1[0], org1[1], self.BLOCK_SIZE, self.BLOCK_SIZE))
 
-
-    lcd = LCD_font_MC(screen)
+    lcd = LCD_font(screen)
     lcd.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=FONT_COLOR, COLOR_OFF=BACK_COLOR)
     lcd.init_row(X_ORG=8, Y_ORG=8, Z_ORG=0, COL_INTV=6)
 
