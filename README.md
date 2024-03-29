@@ -1,5 +1,5 @@
 # **Class Inheritance**
-Sample files for Python class inheritance using LCD_font.
+This file is a sample file of class inheritance using a digital clock template.
 
 ## Files OverView
 + #### PG_LCD_clock.py
