@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lcd-font-samples"
+name = "class inheritance"
 version = "0.1.0"
 description = ""
 authors = ["osatou0141 <gbtikin@gmail.com>"]
