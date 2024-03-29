@@ -1,5 +1,4 @@
 # **Class Inheritance**
-
 Sample files for Python class inheritance using LCD_font.
 
 ## Files OverView
@@ -12,6 +11,9 @@ Sample files for Python class inheritance using LCD_font.
 
 ## About Class Inheritance
 Class inheritance is the creation of a new class based on other class.
+
 The class created by this have the same contents as the base class.
+
 But, It is possible to rewrite the content or add content when the class inherits.
+
 [<img src="./images/code.png" width="230">](./images/code.png) [<img src="./images/output.png" width="230">](./imagesoutput.png)
